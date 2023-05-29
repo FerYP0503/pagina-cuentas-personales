@@ -94,3 +94,19 @@ th {
 #resumen span {
   font-weight: bold;
 }
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}
