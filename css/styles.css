@@ -1,0 +1,96 @@
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #3498db;
+  text-align: center;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 500px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  margin-bottom: 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #ccc;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #555;
+}
+
+th {
+  background-color: #222;
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#registros {
+  text-align: center;
+}
+
+#resumen {
+  background-color: #555;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#resumen h2 {
+  color: #3498db;
+}
+
+#resumen p {
+  margin-bottom: 10px;
+}
+
+#resumen span {
+  font-weight: bold;
+}

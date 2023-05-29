@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cuentas</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+  <h1>Cuentas FYP</h1>
+
+  <div class="container">
+    <h2>Ingresar datos</h2>
+    <label for="concepto">Concepto:</label>
+    <input type="text" id="concepto" placeholder="Ingrese el concepto">
+
+    <label for="monto">Monto:</label>
+    <input type="number" id="monto" placeholder="Ingrese el monto">
+
+    <label for="categoria">Categoría:</label>
+    <select id="categoria">
+      <option value="ingreso">Ingreso</option>
+      <option value="gasto">Gasto</option>
+    </select>
+
+    <button onclick="agregarRegistro()">Agregar</button>
+  </div>
+
+  <div id="registros" class="container">
+    <h2>Registros</h2>
+    <table>
+      <tr>
+        <th>Fecha</th>
+        <th>Concepto</th>
+        <th>Monto</th>
+        <th>Categoría</th>
+        <th></th>
+      </tr>
+    </table>
+  </div>
+
+  <div id="resumen" class="container">
+    <h2>Resumen</h2>
+    <p>Ingresos totales: <span id="total-ingresos">0</span></p>
+    <p>Gastos totales: <span id="total-gastos">0</span></p>
+    <p>Saldo restante: <span id="saldo">0</span></p>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
