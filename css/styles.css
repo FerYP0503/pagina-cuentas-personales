@@ -136,3 +136,22 @@ th {
     padding: 8px 16px;
   }
 }
+
+/* Estilo derechos */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+      font-size: 12px;
+      padding: 8px;
+  }
+}
