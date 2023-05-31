@@ -95,7 +95,7 @@ th {
   font-weight: bold;
 }
 
-/* Estilos para dispositivos móviles */
+/* Estilos para dispositivos móviles 
 @media only screen and (max-width: 600px) {
   body {
     font-size: 14px;
@@ -109,7 +109,7 @@ th {
   table {
     font-size: 12px;
   }
-}
+}*/
 
 /* Botón más 
 .more-btn {
