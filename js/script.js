@@ -54,11 +54,32 @@ function eliminarRegistro(button) {
 }
 
 function actualizarResumen() {
+  var ingresosTotales = 0;
+  var gastosTotales = 0;
+
+  var table = document.querySelector("table");
+  var rows = table.rows;
+
+  for (var i = 1; i < rows.length; i++) {
+    var row = rows[i];
+
+    if (row.style.display !== "none") {
+      var monto = parseFloat(row.cells[2].innerHTML);
+
+      if (row.cells[3].innerHTML === "ingreso") {
+        ingresosTotales += monto;
+      } else if (row.cells[3].innerHTML === "gasto") {
+        gastosTotales += monto;
+      }
+    }
+  }
+
+  var saldoTotal = ingresosTotales - gastosTotales;
+
   document.getElementById("total-ingresos").textContent = ingresosTotales.toFixed(2);
   document.getElementById("total-gastos").textContent = gastosTotales.toFixed(2);
-  document.getElementById("saldo").textContent = (ingresosTotales - gastosTotales).toFixed(2);
+  document.getElementById("saldo").textContent = saldoTotal.toFixed(2);
 }
-
 var ingresosTotales = 0;
 var gastosTotales = 0;
 
@@ -176,4 +197,46 @@ function cargarRegistros() {
 
     actualizarResumen();
   }
+}
+
+// ...
+function filtrarRegistros() {
+  var categoriaSeleccionada = document.getElementById("filtro-categoria").value;
+  var fechaEspecifica = document.getElementById("filtro-fecha").value;
+  var fechaActual = new Date();
+
+  var table = document.querySelector("table");
+  var rows = table.rows;
+
+  for (var i = 1; i < rows.length; i++) {
+    var row = rows[i];
+
+    // Ocultar todas las filas inicialmente
+    row.style.display = "none";
+
+    var fechaRegistro = row.cells[0].innerHTML;
+
+    // Obtener la fecha específica del filtro
+    var fechaEspecificaArray = fechaEspecifica.split("-");
+    var diaEspecificado = parseInt(fechaEspecificaArray[2]);
+    var mesEspecificado = parseInt(fechaEspecificaArray[1]);
+    var añoEspecificado = parseInt(fechaEspecificaArray[0]);
+
+    // Obtener la fecha de registro de la fila
+    var fechaRegistroArray = fechaRegistro.split("/");
+    var diaRegistro = parseInt(fechaRegistroArray[0]);
+    var mesRegistro = parseInt(fechaRegistroArray[1]);
+    var añoRegistro = parseInt(fechaRegistroArray[2]);
+
+    // Verificar si la categoría y la fecha coinciden con los filtros seleccionados
+    var categoriaCoincide = (categoriaSeleccionada === "todos" || row.cells[3].innerHTML === categoriaSeleccionada);
+    var fechaCoincide = (fechaEspecifica === "" || (diaRegistro === diaEspecificado && mesRegistro === mesEspecificado && añoRegistro === añoEspecificado));
+
+    // Mostrar la fila si los filtros coinciden
+    if (categoriaCoincide && fechaCoincide) {
+      row.style.display = "";
+    }
+  }
+
+  actualizarResumen();
 }
