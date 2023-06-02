@@ -26,6 +26,20 @@
     <button onclick="agregarRegistro()">Agregar</button>
   </div>
 
+  <div id="filtros" class="container">
+    <h2>Filtrar Registros</h2>
+    <label for="filtro-categoria">Categoría:</label>
+    <select id="filtro-categoria" onchange="filtrarRegistros()">
+      <option value="todos">General</option>
+      <option value="ingreso">Ingresos</option>
+      <option value="gasto">Gastos</option>
+    </select>
+  
+    <label for="filtro-fecha">Fecha:</label>
+    <input type="date" id="filtro-fecha" onchange="filtrarRegistros()">
+  
+  </div>
+  
   <div id="registros" class="container">
     <h2>Registros</h2>
     <table>
